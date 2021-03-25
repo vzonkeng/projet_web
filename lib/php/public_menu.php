@@ -1,15 +1,17 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand/logo -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index_.php">
         <img src="./admin/image/logos1.png" alt="logo" style="width:40px;">
     </a>
 
     <!-- Links -->
+    <div class="container">
     <ul class="navbar-nav">
 
         <li class="nav-item">
-            <a class="nav-link" href="#">MONTRE SPORT</a>
+            <a href="./index_.php?page=shop.php" class="btn btn-primary">Tous nos produits</a>
+
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">MONTRE LUXE</a>
@@ -28,8 +30,14 @@
                 </li>
 
             </ul>
+          
+            <a class="navbar-brand" a href="./index_.php?page=connect.php" >
+                <img src="./admin/image/logosconec.png" alt="logo" style="width:40px;">
+            </a>
         </div>
     </ul>
+    </div>
+
 </nav>
 
 

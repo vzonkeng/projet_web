@@ -87,36 +87,76 @@ $themes = $liste->getTheme();
 
 
 
-<h4>Luxe homme</h4>
-    <figure class="figure">
-        <img src="/admin/image/image15.png" class="figure-img img-fluid rounded" alt="...">
-        <figcaption class="figure-caption text-end">Luxe Homme</figcaption>
-    </figure>
-<br>
+<?php
+$cat = new CategorieBD($cnx);
+$liste_cat = $cat->getCategorie();
+$nbr_cat = count($liste_cat);
+?>
 
-<h4>Luxe Femme</h4>
-<figure class="figure">
-    <img src="/admin/image/image16.png" class="figure-img img-fluid rounded" alt="...">
-    <figcaption class="figure-caption text-end">luxe Femme</figcaption>
-</figure>
+<div class="card-group,container">
+    <?php
+    for ($i = 0; $i < $nbr_cat; $i++) {
+        ?>
+        <div class="card">
+            <img src="./admin/image/<?php print $liste_cat[$i]->image; ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="index_.php?page=shop.php&idcategorie=<?php print $liste_cat[$i]->idcategorie; ?>" class="lien">
+                      <center><?php print $liste_cat[$i]->nomcategorie; ?></center>
+                    </a>
 
-<h4>Sport Homme</h4>
-<figure class="figure">
-    <img src="/admin/image/image5'.png" class="figure-img img-fluid rounded" alt="...">
-    <figcaption class="figure-caption text-end">Sport Homme</figcaption>
-</figure>
 
 
-<h4>Sport Femme</h4>
-<figure class="figure">
-    <img src="/admin/image/image6'.png" class="figure-img img-fluid rounded" alt="...">
-    <figcaption class="figure-caption text-end">Sport Femme</figcaption>
-</figure>
+                </h5>
+                <p class="card-text">--description de la catégorie--</p>
+
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+    <!--
+    <div class="card">
+        <img src="./admin/images/cake3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title <i class="far fa-grin-alt red"></i></h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./admin/images/patisserie3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title <i class="far fa-grin-alt red"></i></h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+    </div>
+    -->
+</div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
 
 
     <br>
-
+<div id="flip">
     <p><h4>GZV MONTRE, spécialiste de la montre</h4>
+</div>
+    <div id="panel">
         Montre femme, montre homme, montre automatique bien sûr, mais également montre digitale ou montre pas cher, notre passion des montres est vaste.
         Vous ne trouverez pas chez nous de montre de luxe inaccessibles mais plutôt des montres de qualité proposées à des prix justes et
         Nous portons une attention toute particulière à la fiabilité des montres proposées et sélectionnons avec soin les marques que nous vous présentons.
@@ -127,6 +167,7 @@ $themes = $liste->getTheme();
         Vous avez envie d’en savoir plus ?
 
 <br><br>Découvrez nos pages "Qui sommes nous ?" et "Pourquoi acheter ici ?"</p>
+    </div>
 
 
     <p><h4>Bests</h4>
@@ -136,9 +177,6 @@ Nos clients les adorent... nous ne résistons pas à vous les partager !</p>
     <img src="/admin/image/image14.png" class="figure-img img-fluid rounded" alt="...">
     <figcaption class="figure-caption text-end">best.</figcaption>
 </figure>
-
-
-</body>
 
 
 

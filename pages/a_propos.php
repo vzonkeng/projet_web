@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-    <meta charset="utf-8" />
-    <title>Mon super site</title>
-
-</HEAD>
-
-<BODY>
-
-<?PHP
-
-include("./lib/php/public_menu.php");
-
-?>
-
-</BODY>
-</HTML>
-
-
 
 
 
