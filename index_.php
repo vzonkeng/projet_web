@@ -42,6 +42,8 @@ $cnx = Connexion::getInstance($dsn , $user ,$password);
         </nav>
 
     </section>
+
+
     <section id="contenu">
         <div id="main">
             <?php

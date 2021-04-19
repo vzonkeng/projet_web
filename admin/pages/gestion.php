@@ -1,3 +1,12 @@
+<?php
+//admin/pages/produit.php
+include ('./lib/php/verifier_connection.php');
+if(isset($_SESSION['admin'])) {
+    print "<br/>Bienvenue dans la gestion des produits";
+
+
+}
+?>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -29,23 +38,23 @@
             <p><a href="#">
                     <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
                     <br> Ajouter un produit
-                </a></p>
+</a></p>
             <p><a href="#">
                     <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
                     <br> Modifier un produit
-                </a></p>
+</a></p>
             <p><a href="#">
                     <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
                     <br> supprimer un produit
-                </a></p>
-            <p><a href="./index_.php?page=gestion_produits.php">
+</a></p>
+            <p><a href="./index_.php?page=test.php">
                     <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
-                    <br> Gestions produits
-                </a></p>
+                    <br> Lister les produits
+</a></p>
             <p><a href="#">
                     <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
                     <br> Lister les client
-                </a></p>
+</a></p>
         </div>
         <div class="col-sm-8 text-left,container">
             <h1>Bienvenue</h1>

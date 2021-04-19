@@ -7,7 +7,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index_.php">Logo</a>
+            <a class="navbar-brand" href="../admin/index_.php?page=test.php">
+                <img src="../admin/image/logos1.png" alt="logo" style="width:40px;">
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -26,24 +28,24 @@
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 sidenav">
-            <p><a href="#">
-                    <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
-                    <br> Ajouter un produit
+            <p><a href="../admin/index_.php?page=affAll.php">
+                    <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
+                    <br> Lister les produits
                 </a></p>
             <p><a href="#">
-                    <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
+                    <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
                     <br> Modifier un produit
                 </a></p>
             <p><a href="#">
-                    <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
+                    <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
                     <br> supprimer un produit
                 </a></p>
-            <p><a href="./index_.php?page=gestion_produits.php">
-                    <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
+            <p><a href="../admin/index_.php?page=gestion_produits.php">
+                    <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
                     <br> Gestions produits
                 </a></p>
             <p><a href="#">
-                    <img src="./admin/image/ajout.png" alt="logo" style="width:40px;">
+                    <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
                     <br> Lister les client
                 </a></p>
         </div>

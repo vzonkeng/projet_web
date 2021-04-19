@@ -21,13 +21,13 @@ $cnx = Connexion::getInstance($dsn , $user ,$password);
     <link rel="stylesheet" href="./lib/css/custom.css"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src ="./admin/lib/js/fonctions_jquery.js"></script>
+    <script src ="./lib/js/fonctions_jquery.js"></script>
 </head>
 
 <body>
 <div id="page" class =" container">
     <header class="img_header">
-
+        <a href="index_.php?page=disconnect.php">Deconnexion</a>
     </header>
     <section id="colGauche">
         <nav>
@@ -38,6 +38,21 @@ $cnx = Connexion::getInstance($dsn , $user ,$password);
             }
             ?>
         </nav>
+
+    </section>
+
+    <section id="colGauche">
+        <nav>
+            <?php
+            $path = "./lib/php/test.php";
+            if(isset($_SESSION['admin'])) {
+                if (file_exists($path)) {
+                    include($path);
+                }
+            }
+            ?>
+        </nav>
+
 
     </section>
     <section id="contenu">
@@ -69,6 +84,18 @@ $cnx = Connexion::getInstance($dsn , $user ,$password);
             <img src="./images/pub.jpg" alt="publicité" />
         </aside>
         -->
+
+
+    </section>
+
+
+        <!--
+        <aside id="pub">
+            <img src="./images/pub.jpg" alt="publicité" />
+        </aside>
+        -->
+
+
     </section>
 
 </div>

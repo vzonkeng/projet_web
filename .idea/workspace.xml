@@ -30,7 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../boulangerie1_04" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -50,15 +50,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,7 +91,14 @@
       <workItem from="1616090754197" duration="11629000" />
       <workItem from="1616139078686" duration="1894000" />
       <workItem from="1616154179487" duration="12385000" />
-      <workItem from="1616574211316" duration="10671000" />
+      <workItem from="1616574211316" duration="12634000" />
+      <workItem from="1616970005054" duration="9847000" />
+      <workItem from="1617111001618" duration="610000" />
+      <workItem from="1617186064962" duration="2914000" />
+      <workItem from="1617646191711" duration="1189000" />
+      <workItem from="1618338720489" duration="581000" />
+      <workItem from="1618424051752" duration="1482000" />
+      <workItem from="1618747840686" duration="36372000" />
     </task>
     <servers />
   </component>

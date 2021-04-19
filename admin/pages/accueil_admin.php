@@ -1,4 +1,51 @@
-<center><header class = container <strong> <h2>Adminstration</h2> </strong>  <a class="ad" href="index_.php"></center>
+<h2>Accueil admin</h2>
+<?php
+if(isset($_POST['submit'])){
+    extract($_POST,EXTR_OVERWRITE);
+    $ad = new AdminBD($cnx);
+    $admin = $ad->getAdmin($login, $password);
+//var_dump($admin);
+    if($admin) {
+        $_SESSION['admin']=1;
+        print "Bienvenue "
+            ?>
+            //pour le rafraichissement de la page
+        <meta http-equiv="refresh": content="0;URL=./index_.php?page=test.php">
+<?php
+    } else {
+        $message = 'Identifiant incorrect';
+    }
+}
+?>
+<p class="">
+    <?php
+    if(isset($message)){
+        print $message;
+    }
+    ?>
+</p>
+<form  action="<?php print $_SERVER['PHP_SELF'];?>" method="post">
+    <div class="mb-3">
+        <label for="login" class="form-label">Login</label>
+        <input type="login" class="form-control" id="login" name="login">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+
+    <?php
+    if(isset($_POST['erreur'])){
+        $err = $_POST['erreur'];
+        if($err==1 || $err==2)
+            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+    }
+    ?>
+</form>
+
+
+<!--<center><header class = container <strong> <h2>Adminstration</h2> </strong>  <a class="ad" href="index_.php"></center>
         <img src="./admin/image/logos1.png" alt="logo" style="width:40px;">
     </a></header>
 
@@ -14,7 +61,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
+   <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
             margin-bottom: 0;
@@ -64,7 +111,7 @@
             <ul class="nav navbar-nav">
                 <!--<li class="active"><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>-->
+                <li><a href="#">Projects</a></li>--
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -121,4 +168,4 @@
 </footer>
 
 </body>
-</html>
+</html>-->

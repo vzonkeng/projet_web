@@ -1,16 +1,9 @@
-<center>
+
     <h1>
         Connectez-vous à votre compte
     </h1>
-</center>
 
-
-<html>
-<head>
-
-</head>
-<body id = bd >
-<div id="container">
+    <div id="container">
     <!-- zone de connexion -->
 
     <form class = "f1" action="verification.php" method="POST">
@@ -22,7 +15,15 @@
         <label><b>Mot de passe</b></label>
         <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
-        <input type="submit" id='submit' value='LOGIN' >
+        <input type="submit" id='submit' value='LOGIN' name="submit" >
+
+
+        <li class="nav-item">
+            <a href="./index_.php?page=inscription.php" class="lien">Pas de compte?créez-en un</a>
+
+        </li>
+
+
         <?php
         if(isset($_GET['erreur'])){
             $err = $_GET['erreur'];
@@ -30,10 +31,8 @@
                 echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
         }
         ?>
+
     </form>
 </div>
 
-</body>
-<style>
 
-</style>

@@ -12,7 +12,57 @@ $themes = $liste->getTheme();
 ?>
 
 
-<html>
+<?php
+$prod = new ProduitBD($cnx);
+$liste = $prod->getAllProduit();
+//var_dump($liste);
+$nbr=count($liste);
+?>
+&nbsp;&nbsp;
+<div class="container">
+
+<form action = "<?php print $_SERVER['PHP_SELF'];?>" method="">
+
+    &nbsp;&nbsp;
+
+    <select name = "choix_produit" id="choix_produit">
+       <option value = "">Choississez</option>
+        <?php
+        for($i=0 ; $i<$nbr ; $i++){
+            ?>
+            <option value="<?php print $liste[$i]->idproduit;?>">
+                <?php print $liste[$i]->nomproduit;?>
+            </option>
+            <?php
+        }
+        ?>
+        <input type = "submit" name = "submit_id" value="chercher" id ="submit_id">
+    </select>
+
+    <div class="card-group" id="infoProduit">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <div id="id_produit"></div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <div id="image_produit"></div>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+
+
+    <html>
 
     <style>
         /* Make the image fully responsive */
