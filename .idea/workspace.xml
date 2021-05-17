@@ -30,7 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../boulangerie1_04" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/poo2/Bibliotheque" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -45,18 +45,21 @@
       <recent name="C:\laragon\www\projet_web\admin\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\projet_web" />
       <recent name="C:\laragon\www\projet_web\admin\lib\php" />
+      <recent name="C:\laragon\www\projet_web\pages" />
+      <recent name="C:\laragon\www\projet_web" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,7 +101,20 @@
       <workItem from="1617646191711" duration="1189000" />
       <workItem from="1618338720489" duration="581000" />
       <workItem from="1618424051752" duration="1482000" />
-      <workItem from="1618747840686" duration="36372000" />
+      <workItem from="1618747840686" duration="36992000" />
+      <workItem from="1618919505659" duration="1166000" />
+      <workItem from="1618926912979" duration="13213000" />
+      <workItem from="1619159111699" duration="1184000" />
+      <workItem from="1619428912224" duration="7992000" />
+      <workItem from="1619517381721" duration="3698000" />
+      <workItem from="1620031239573" duration="1162000" />
+      <workItem from="1620038865377" duration="25806000" />
+      <workItem from="1620142806395" duration="38070000" />
+      <workItem from="1620374665569" duration="586000" />
+      <workItem from="1620377855114" duration="1021000" />
+      <workItem from="1620562664589" duration="15082000" />
+      <workItem from="1620681029234" duration="42944000" />
+      <workItem from="1621165464122" duration="9559000" />
     </task>
     <servers />
   </component>

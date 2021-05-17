@@ -1,14 +1,19 @@
 
 <h1>A propos de nous</h1>
 
-<figure class="figure">
-    <img src="/admin/image/image19'.png" class="figure-img img-fluid rounded" alt="...">
-    <figcaption class="figure-caption text-end"></figcaption>
 
-    <p align=right>
-        <img src="/admin/image/nous.png" class="figure-img img-fluid rounded" alt="...">
-    </p>
-</figure>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/admin/image/image19'.png" class="figure-img img-fluid rounded" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="/admin/image/nous.png" class="figure-img img-fluid rounded" alt="...">
+        </div>
+
+    </div>
+</div>
 
 <div id="section1" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
     <p>

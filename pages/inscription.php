@@ -1,94 +1,106 @@
-<?php //traitement du formulaire
-if(isset($_GET['ajouter']))
-{
-    if($_GET['first_name']=="" OR $_GET['last_name"']=="" OR $_GET['localite']=="" OR
-        $_GET['code_postal']=="" OR $_GET['numero_rue']=="" OR $_GET['your_username']=="" OR $_GET['password']==""  ){
-        $erreur="remplir tous les champs svp !!!!";
-    }
-    else{
-        $query="insert into utlisateur(nom,prenom,localite,code,numrue,username,password)
-       values('".$_GET['first_name']."','".$_GET['last_name"']."','".$_GET['localite']."','".$_GET['code_postal']."',".$_GET['numero_rue'].",'".$_GET['your_username']."','".$_GET['password']."')";
-        //print $query;
 
-        if(sendData($query,$cnx))
-            print "Votre Ajout est enregistrée";
-        else
-            print "problème rencontré!!!!!  ";
+<h2>Editer / ajouter utilisateur</h2>
+<?php
+$utilisateur = new UtilisateurBD($cnx);
+if (isset($_GET['editer_ajouter'])) {
+    print 'cou';
+    extract($_GET, EXTR_OVERWRITE);
+    if ($_GET['action'] == "editer") {
+        print 'coucou';
+        ?>
+
+        <pre><?php //var_dump($_GET);
+        ?></pre><?php
+       if (!empty($reference) && !empty($nom) && !empty($prenom) && !empty($localite) && !empty($pseudo) && !empty($mdp)&& !empty($date_naissance)) {
+            //3 instructions artificielles (devraient arriver d'un formulaire plus complet) :
+            //$photo = 'fl3.png';
+            //$idcategorie = 2;
+            $utilisateur->mise_a_jour($idutlisateur,$nom,$prenom,$localite,$pseudo,$mdp,$date_naissance,$reference);
+
+            print "mise a jour effectué avec success!!!";
+
+        }
+    } else if ($_GET['action'] == "inserer") {
+        print 'coucou'
+        ?>
+        <pre><?php //var_dump($_GET);     ?></pre><?php
+
+
+        if (!empty($reference) && !empty($nom) && !empty($prenom) && !empty($localite) && !empty($pseudo) && !empty($mdp)&& !empty($date_naissance) ) {
+            print "ici";
+            //3 instructions artificielles (devraient arriver d'un formulaire plus complet) :
+            //$photo = 'fl3.png';
+            // $idcategorie = 2;
+            $retour = $utilisateur->ajout_utilisateur($nom,$prenom,$localite,$pseudo,$mdp,$date_naissance,$reference);
+            print "ajouter avec success!!!";
+            print "retour : " . $retour;
+        }
     }
+
 }
 ?>
 
-<?php if(isset($erreur)) print "<span class=\"rouge\">".$erreur."</span>"; ?>
-<h1>
-    Création d'un compte
-</h1>
 
-<div id="container">
+<br>
 
-    <div class="page-content">
-        <div class="form-v4-content">
-            <div class="form-left">
-                <h2>INFOMATION</h2>
-                <p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed. Diam volutpat commodo.</p>
-                <p class="text-2"><span>Eu ultrices:</span> Vos informations sont confidentielles et sécursé</p>
-                <div class="form-left-last">
-                    <input type="submit" name="account" class="account" value="Have An Account">
+
+
+
+<div class="card text-center">
+    <div class="card-header">
+        <img src="./admin/image/user.jpg" alt="logo" style="width:40px;" width="2" height="50">
+
+    </div>
+    <div class="card-body">
+        <form class="row g-3" method="get" action="<?php print $_SERVER['PHP_SELF']; ?>" id="formEditAjout">
+            <div class="col-md-2">
+                <label for="reference" class="form-label">Reference</label>
+                <input type="text" class="form-control" id="reference" name="reference">
+            </div>
+            <div class="col-md-5">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom">
+            </div>
+            <div class="col-md-5">
+                <label for="prenom" class="form-label">Prenom</label>
+                <input type="text" class="form-control" id="prenom" name="prenom">
+            </div>
+            <div class="col-md-6">
+                <label for="localite" class="form-label">Localite</label>
+                <input type="text" class="form-control" id="localite" name="localite">
+            </div>
+            <div class="col-md-6">
+                <label for="pseudo" class="form-label">Username</label>
+                <input type="text" class="form-control" id="pseudo" name="pseudo">
+            </div>
+            <div class="col-md-6">
+                <label for="mdp" class="form-label">Password</label>
+                <input type="password" class="form-control" id="mdp" name="mdp">
+            </div>
+            <div class="form-group , col-lg-6">
+                <label class="control-label" for="date_naissance">Date de naissance</label>
+                <input class="form-control" id="date_naissance" name="date_naissance" placeholder="JJ/MM/YYYY"
+                       type="date"/>
+            </div>
+
+            <div class="col-12">
+                <div class="d-grid grap-3 col-5 mx-auto" role="group">
+                    <input type="hidden" name="idutlisateur" id="idutlisateur">
+                    <input type="hidden" name="action" id="action">
+                    <input type="hidden" name="page" value="inscription.php">
+                    <button type="submit" class="btn btn-primary" id="editer_ajouter" name="editer_ajouter">Creer un compte
+
+                    </button>
                 </div>
             </div>
-            <form class="form-detail" action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" id="myform">
-                <h2>REGISTER FORM</h2>
-                <div class="form-group">
-                    <div class="form-row form-row-1">
-                        <label for="first_name">First Name</label>
-                        <input type="text" name="first_name" id="first_name" class="input-text">
-                    </div>
-                    <div class="form-row form-row-1">
-                        <label for="last_name">Last Name</label>
-                        <input type="text" name="last_name" id="last_name" class="input-text">
-                    </div>
-                    <div class="form-row form-row-1">
-                        <label for="localite">Localite</label>
-                        <input type="text" name="localite" id="localite" class="input-text">
-                    </div>
-                    <div class="form-row form-row-1">
-                        <label for="code_postal">Code postal</label>
-                        <input type="text" name="code_postal" id="code_postal" class="input-text">
-                    </div>
-                    <div class="form-row form-row-1">
-                        <label for="numero_rue"> Numero Rue</label>
-                        <input type="text" name="numero_rue" id="numero_rue" class="input-text">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <label for="your_username">Your Username<br>
-                        <p style='color:red'>le symbole @ est obligatoire </p></label>
-                    <input type="text" name="your_username" id="your_username" class="input-text" required
-                           pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
-                </div>
-                <div class="form-group">
-                    <div class="form-row form-row-1 ">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" class="input-text" required>
-                    </div>
 
-                    <div class="form-row form-row-1">
-                        <label for="  <br> comfirm-password">Comfirm Password</label>
-                        <input type="password" name="comfirm_password" id="comfirm_password" class="input-text"
-                               required>
-                    </div>
-                </div>
-                <div class="form-checkbox">
-                    <label class="container"><p>I agree to the <a href="#" class="text">Terms and Conditions</a></p>
-                        <input type="checkbox" name="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="form-row-last">
-                    <input type="submit" name="register" class="register" value="Register">
-                </div>
-            </form>
-        </div>
+
+        </form>
+
+    </div>
+    <div class="card-footer text-muted">
+
     </div>
 </div>
+
 

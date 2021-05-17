@@ -1,5 +1,5 @@
 
-// index public
+
 <!doctype html>
 <?php
 session_start();
@@ -58,10 +58,10 @@ $cnx = Connexion::getInstance($dsn , $user ,$password);
     <section id="contenu">
         <div id="main">
             <?php
-            if(isset($_session['page'] ) && !isset($_session['partie_admin'])){
+           /* if(isset($_session['page'] ) && !isset($_session['partie_admin'])){
                 unset($_session['page']);
                 $_session['partie_admin']=1;
-            }
+            }*/
             if (!isset($_SESSION['pages'])) {
                 $_SESSION['page'] = "accueil_admin.php";
             }

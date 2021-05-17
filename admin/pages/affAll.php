@@ -16,7 +16,9 @@ $nbr = count($liste);
         <th scope="col">Prix</th>
         <th scope="col">Stock</th>
         <th scope="col">Idcategorie</th>
+        <th scope="col">Description</th>
         <th scope="col">Photo</th>
+
     </tr>
     </thead>
     <tbody>
@@ -53,10 +55,19 @@ $nbr = count($liste);
                 </span>
             </td>
             <td>
-                <span contenteditable="true" name="photo" id="<?php print $liste[$i]->idproduit; ?>">
-                    <?php print $liste[$i]->photo; ?>
+                <span contenteditable="true" name="description" id="<?php print $liste[$i]->description; ?>">
+                    <?php print $liste[$i]->description; ?>
                 </span>
             </td>
+            <td>
+                <span contenteditable="true" name="photo" id="<?php print $liste[$i]->idproduit; ?>">
+                    <?php print $liste[$i]->photo; ?>
+                    <img src="./image/<?php print $liste[$i]->photo; ?> " width="55" height="40"
+                </span>
+            </td>
+
+            <td> <button class="w-60 btn btn-sm btn-red border border-danger text-red deleteproduit" id="<?php print $liste[$i]->idproduit;?>" type="submit" name="submitSuppr">Delete</button></td>
+
         </tr>
         <?php
     }

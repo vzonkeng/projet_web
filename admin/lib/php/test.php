@@ -27,7 +27,7 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
-        <div class="col-sm-2 sidenav">
+        <div class="col-sm-2 sidenav bg-warning">
             <p><a href="../admin/index_.php?page=affAll.php">
                     <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
                     <br> Lister les produits
@@ -35,6 +35,10 @@
             <p><a href="#">
                     <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
                     <br> Modifier un produit
+                </a></p>
+            <p><a href="../admin/index_.php?page=edit_produit.php">
+                    <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
+                    <br>  Modifier/Ajouter
                 </a></p>
             <p><a href="#">
                     <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
@@ -44,10 +48,7 @@
                     <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
                     <br> Gestions produits
                 </a></p>
-            <p><a href="#">
-                    <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
-                    <br> Lister les client
-                </a></p>
+
         </div>
         <div class="col-sm-8 text-left,container">
             <h1>Bienvenue</h1>
@@ -56,17 +57,32 @@
             <h3>Test</h3>
             <p>Lorem ipsum...</p>
         </div>
-        <div class="col-sm-2 sidenav">
+        <div class="col-sm-2 sidenav bg-warning ">
             <div class="well">
-                <p>ADS</p>
+                <p><a href="../admin/index_.php?page=affAllClient.php">
+                        <img src="../admin/image/modif.png" alt="logo" style="width:40px;">
+                        <br> Lister les client
+                    </a></p>
             </div>
             <div class="well">
-                <p>ADS</p>
+                <p><a href="../pages/print_produit.php">
+                        <img src="./image/ajout.png" alt="logo" style="width:40px;">
+                        <br> imprimer/telecharger liste produit
+                    </a></p>
+            </div>
+            <div class="well">
+                <p><a href="../pages/print_client.php">
+                        <img src="./image/ajout.png" alt="logo" style="width:40px;">
+                        <br> imprimer/telecharger liste client
+                    </a></p>
+            </div>
+            <div class="well">
+                <p><a href="../pages/inscription.php">
+                        <img src="./image/ajout.png" alt="logo" style="width:40px;">
+                        <br> modifier/ajouter client
+                    </a></p>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer>

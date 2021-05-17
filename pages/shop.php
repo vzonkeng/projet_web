@@ -37,11 +37,11 @@ $nbr = count($liste);
                                 ?>
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <i class=" btn-group"></i>
-                                    <button type="buton" class="btn btn-outline-secondary">Commander</button>
+                                <div class="btn-group" id="remove_a">
+                                    <button data-id="<?php print $liste[$i]->idproduit;?>" data-bs-toggle="modal" data-bs-target="#info_produit" class="info_produit"> Info </button>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

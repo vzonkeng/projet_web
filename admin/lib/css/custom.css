@@ -93,7 +93,7 @@ input[type=submit]:hover {
 }
 
 .card-header,.card-footer {
-    background-color: lightcoral ;
+    background-color: #ff5100;
 }
 .card{
     margin:0.8em;

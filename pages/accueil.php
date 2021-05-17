@@ -21,7 +21,7 @@ $nbr=count($liste);
 &nbsp;&nbsp;
 <div class="container">
 
-<form action = "<?php print $_SERVER['PHP_SELF'];?>" method="">
+<form action = "<?php print $_SERVER['PHP_SELF'];?>" method="get">
 
     &nbsp;&nbsp;
 

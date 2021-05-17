@@ -1,6 +1,6 @@
 <h2>Accueil admin</h2>
 <?php
-if(isset($_POST['submit'])){
+if(isset($_POST['submit_admin'])){
     extract($_POST,EXTR_OVERWRITE);
     $ad = new AdminBD($cnx);
     $admin = $ad->getAdmin($login, $password);
@@ -33,15 +33,8 @@ if(isset($_POST['submit'])){
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" name="password">
     </div>
-    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+    <button type="submit" class="btn btn-primary" name="submit_admin">Submit</button>
 
-    <?php
-    if(isset($_POST['erreur'])){
-        $err = $_POST['erreur'];
-        if($err==1 || $err==2)
-            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-    }
-    ?>
 </form>
 
 

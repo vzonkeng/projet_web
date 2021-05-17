@@ -1,12 +1,13 @@
-create function is_utlisateur(text,text) returns integer
+--drop function is_admin(text,text);
+create or replace  function is_utilisateur(text,text) returns integer
 as
 '
-	declare f_username alias for $1;
+	declare f_login alias for $1;
 	declare f_password alias for $2;
 	declare id integer;
 	declare retour integer;
 begin
-	select into id id_utlisateur from utlisateur where username=f_username and password = f_password;
+	select into id idutlisateur from utilisateur where pseudo=f_login and mdp = f_password;
 	if not found then
 		retour = 0;
 	else
@@ -16,3 +17,5 @@ begin
 end;
 '
 language plpgsql;
+
+select is_utilisateur('vanel','vanel')

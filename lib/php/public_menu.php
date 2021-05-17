@@ -1,8 +1,10 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand/logo -->
-    <a class="navbar-brand" href="index_.php">
+    <a class="navbar-brand " href="index_.php">
+
         <img src="./admin/image/logos1.png" alt="logo" style="width:40px;">
+
     </a>
 
     <!-- Links -->
@@ -13,14 +15,12 @@
             <a href="./index_.php?page=shop.php" class="btn btn-primary">Tous nos produits</a>
 
         </li>
+
         <li class="nav-item">
-            <a class="nav-link" href="#">MONTRE LUXE</a>
+            <a class="nav-link" href="./index_.php?page=panier.php">panier</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">MARQUE</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">ACCESSOIRE</a>
+            <a class="nav-link" href="https://www.gouvernement.fr/info-coronavirus">Infos-covid</a>
         </li>
 
         <div class = "btn-group">
@@ -30,13 +30,45 @@
                 </li>
 
             </ul>
-          
-            <a class="navbar-brand" a href="./index_.php?page=connect.php" >
-                <img src="./admin/image/logosconec.png" alt="logo" style="width:40px;">
-            </a>
+
+
         </div>
+
+
+        <?php
+        if(!isset($_SESSION['utilisateur'])){
+            ?>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="./admin/index_.php"> ADMIN</a>
+        </li>
+
+
+        <a class="navbar-brand" a href="./index_.php?page=connect.php" >
+            <img src="./admin/image/logosconec.png" alt="logo" style="width:40px;">
+        </a>
+        <?php
+        }
+        ?>
+
+        <li class="nav-item">
+            <?php
+            if(isset($_SESSION['utilisateur'])){
+                ?>
+
+            <a class="nav-link" href="admin/index_.php?page=disconnect.php"> deconnexion</a>
+             <?php
+            }
+           ?>
+
+
+        </li>
+
     </ul>
     </div>
+
+
+
 
 </nav>
 

@@ -9,6 +9,63 @@ class ProduitBD extends Produit{
     }
 
 
+   /* public function mise_a_jourProduit(){
+        echo 'modification';
+    }*/
+
+    public function supprproduit($id){
+        try{
+            $query = "select supprproduit(:idproduit) as retour";
+            $_resultset = $this->_db->prepare($query);
+            $_resultset->bindValue(':idproduit',$id);
+            $_resultset->execute();
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
+    }
+
+    public function mise_a_jourProduit($idproduit,$nomproduit,$photo,$prix,$stock,$idcategorie,$reference,$description){
+       // print "coucou";
+        try{
+            $query="update produit set  nomproduit=:nomproduit,photo=:photo,prix=:prix,stock=:stock,description=:description,idcategorie=:idcategorie,reference=:reference where idproduit=:idproduit";
+            $_resultset = $this->_db->prepare($query);
+            $_resultset->bindValue(':idproduit', $idproduit);
+            $_resultset->bindValue(':nomproduit', $nomproduit);
+            $_resultset->bindValue(':photo', $photo);
+            $_resultset->bindValue(':prix', $prix);
+            $_resultset->bindValue(':stock', $stock);
+            $_resultset->bindValue(':idcategorie', $idcategorie);
+            $_resultset->bindValue(':reference', $reference);
+            $_resultset->bindValue(':description', $description);
+            $_resultset->execute();
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
+    }
+
+    public function ajout_produit($nomproduit,$photo,$prix,$stock,$description,$idcategorie,$reference){
+       // print "coucou";
+        try{
+            $query="insert into produit (nomproduit,photo,prix,stock,description,idcategorie,reference) values ";
+            $query.="(:nomproduit,:photo,:prix,:stock,:description,:idcategorie,:reference)";
+            $_resultset = $this->_db->prepare($query);
+            $_resultset->bindValue(':nomproduit', $nomproduit);
+            $_resultset->bindValue(':photo', $photo);
+            $_resultset->bindValue(':prix', $prix);
+            $_resultset->bindValue(':stock', $stock);
+            $_resultset->bindValue(':description', $description);
+            $_resultset->bindValue(':idcategorie', $idcategorie);
+            $_resultset->bindValue(':reference', $reference);
+            $_resultset->execute();
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
+    }
+
+
+
+
+
     public function updateProduit($champ,$id,$valeur){
         try{
             //appeler une procédure embarquée
@@ -17,6 +74,21 @@ class ProduitBD extends Produit{
             $resultset->execute();
         }catch(PDOException $e){
             print $e->getMessage();
+        }
+    }
+
+
+    public function getProduitByDescription($description){
+        try {
+            $query = "SELECT * FROM produit WHERE description = :description";
+            $_resultset = $this->_db->prepare($query);
+            $_resultset->bindValue(':description',$description);
+            $_resultset->execute();
+            $data = $_resultset->fetch();
+
+            return $data;
+        } catch (PDOException $e) {
+            print "Echec de la requête : ".$e->getMessage();
         }
     }
 
@@ -53,6 +125,8 @@ class ProduitBD extends Produit{
         return $_data;
 
     }
+
+
 
     public function getProduitsByCat($idcategorie){
         try{

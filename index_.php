@@ -4,6 +4,7 @@
 <?php
 session_start();
 include ('./admin/lib/php/admin_liste_include.php');
+
 //include ('./admin/lib/php/pg_connect.php');
 //include ('./admin/lib/php/autoload.php');
 //print 'test '.$password;
@@ -55,7 +56,7 @@ $cnx = Connexion::getInstance($dsn , $user ,$password);
                 $_SESSION['page'] = $_GET['page'];
             }
             $path = "./pages/" . $_SESSION['page'];
-            // print "path: " . $path . "<br>";
+             //print "path: " . $path . "<br>";
             if (file_exists($path)) {
                 include ($path);
                 //print "path: " . $path . "<br>";
